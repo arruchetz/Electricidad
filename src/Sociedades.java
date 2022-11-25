@@ -19,17 +19,13 @@ public class Sociedades implements Clientes {
     }
 
     @Override
-    public String getEmail() {
-        return this.email;
-    }
-
-
-    @Override
     public String getPoblacion() {
         return this.poblacion;
     }
-    public void setDirpostal(String dirpostal) {
-        this.dirpostal = dirpostal;
+
+    @Override
+    public String getDirpostal() {
+        return this.dirpostal;
     }
 
     @Override
@@ -59,6 +55,10 @@ public class Sociedades implements Clientes {
 
     public void setPoblacion(String poblacion) {
         this.poblacion = poblacion;
+    }
+
+    public void setDirpostal(String dirpostal) {
+        this.dirpostal = dirpostal;
     }
 
     public void setProvincia(String provincia) {
