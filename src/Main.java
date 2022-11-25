@@ -1,114 +1,124 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Autónomos selfemployed = new Autónomos();
-        selfemployed.setCodcliente(1);
-        selfemployed.setNombre("Daniel");
-        selfemployed.setApellidos("Garcia");
-        selfemployed.setDni("763432132K");
-        selfemployed.setDirpostal("05001");
-        selfemployed.setPoblacion("Ávila");
-        selfemployed.setProvincia("Ávila");
-        selfemployed.setEmail("daniel@gmail.com");
-        selfemployed.setTelefono(879674321);
+        Scanner entrada = new Scanner(System.in);
 
-        System.out.println(selfemployed.getCodcliente());
-        System.out.println(selfemployed.getNombre());
-        System.out.println(selfemployed.getApellidos());
-        System.out.println(selfemployed.getDni());
-        System.out.println(selfemployed.getDirpostal());
-        System.out.println(selfemployed.getPoblacion());
-        System.out.println(selfemployed.getProvincia());
-        System.out.println(selfemployed.getEmail());
-        System.out.println(selfemployed.getTelefono());
+        System.out.println("*DATOS AUTONOMOS*");
+        Autonomos autonomo = new Autonomos();
+        System.out.print("Dni:");
+        autonomo.setDni(entrada.next());
+        System.out.print("Nombre:");
+        autonomo.setNombre(entrada.next());
+        System.out.print("Apellidos:");
+        autonomo.setApellidos(entrada.next());
+        System.out.print("Direccion postal:");
+        autonomo.setMailingAddress(entrada.next());
+        System.out.print("Poblacion:");
+        autonomo.setPoblacion(entrada.next());
+        System.out.print("Provincia:");
+        autonomo.setProvincia(entrada.next());
+        System.out.print("Email:");
+        autonomo.setEmail(entrada.next());
+        System.out.print("Telefono:");
+        autonomo.setTelefono(entrada.next());
+
+        System.out.println("*DATOS SOCIEDADES*");
+        Sociedades sociedad = new Sociedades();
+        System.out.print("Cif:");
+        sociedad.setCif(entrada.next());
+        System.out.print("Nombre:");
+        sociedad.setNombre(entrada.next());
+        System.out.print("Direccion postal:");
+        sociedad.setDirpostal(entrada.next());
+        System.out.print("Poblacion:");
+        sociedad.setPoblacion(entrada.next());
+        System.out.print("Provincia:");
+        sociedad.setProvincia(entrada.next());
+        System.out.print("Email:");
+        sociedad.setEmail(entrada.next());
+        System.out.print("Telefono:");
+        sociedad.setTelefono(entrada.next());
+
+        System.out.println("*DATOS PRODUCTOS*");
+        Productos producto = new Productos();
+        producto.setIdproducto(entrada.nextInt());
+        System.out.print("Nombre:");
+        producto.setNombre(entrada.next());
+        System.out.print("Marca:");
+        producto.setMarca(entrada.next());
+        System.out.print("Modelo:");
+        producto.setModelo(entrada.next());
+        System.out.print("Precio:");
+        producto.setPrecio(entrada.nextInt());
+        System.out.print("Tipo IVA:");
+        producto.setIva(entrada.nextInt());
+
+        System.out.println("*DATOS SERVICIOS*");
+        Servicios servicio = new Servicios();
+        System.out.print("Id:");
+        servicio.setIdservicio(entrada.nextInt());
+        System.out.print("Nombre:");
+        servicio.setNombre(entrada.next());
+        System.out.print("Precio:");
+        servicio.setPrecio(entrada.nextInt());
+        System.out.print("Tipo IVA:");
+        servicio.setIva(entrada.nextInt());
+
+        System.out.println("*DATOS FACTURA*");
+        Facturas factura = new Facturas();
+        System.out.print("Id:");
+        factura.setId(entrada.nextInt());
+        System.out.print("Fecha:");
+        factura.setFecha(entrada.next());
+        factura.setCliente(sociedad);
+        factura.setProducto(producto);
+        factura.setServicio(servicio);
+        System.out.print("Base Imponible:");
+        factura.setBaseimp(entrada.next());
+        System.out.print("Total:");
+        factura.setTotal(entrada.next());
+
+        System.out.println("DATOS FACTURA DE SOCIEDAD");
+        Facturas factura1 = new Facturas();
+        factura1.setId(2);
+        System.out.print("Fecha:");
+        factura1.setFecha(entrada.next());
+        factura1.setCliente(sociedad);
+        factura1.setProducto(producto);
+        factura1.setServicio(servicio);
+        System.out.print("Base Imponible:");
+        factura1.setBaseimp(entrada.next());
+        System.out.print("Total:");
+        factura1.setTotal(entrada.next());
 
 
-        Facturas bills = new Facturas();
-        bills.setCodfactura(213);
-        bills.setFechafactura("10 de Noviembre 2022");
-        bills.setCodcliente(1);
-        bills.setCodproducto("17/8/2");
-        bills.setCodservicio("Lopez");
-        bills.setBaseimp("Calle Arroz");
-        bills.setTotal("17/8/2000");
-
-        System.out.println(bills.getCodfactura());
-        System.out.println(bills.getFechafactura());
-        System.out.println(bills.getCodcliente());
-        System.out.println(bills.getCodproducto());
-        System.out.println(bills.getCodservicio());
-        System.out.println(bills.getBaseimp());
-        System.out.println(bills.getTotal());
-
-
-        Impresion print = new Impresion();
-        print.setCodfacturas(1);
-        print.setNifcliente("43267809G");
-        print.setNombrecliente("Javier");
-        print.setDircliente("Calle Juan Grande");
-        print.setPoblacioncliente("Ávila");
-        print.setProvinciacliente("Ávila");
-        print.setBaseimp("4123v");
-        print.setTotal("10543");
-
-        System.out.println(print.getCodfacturas());
-        System.out.println(print.getNifcliente());
-        System.out.println(print.getNombrecliente());
-        System.out.println(print.getDircliente());
-        System.out.println(print.getPoblacioncliente());
-        System.out.println(print.getProvinciacliente());
-        System.out.println(print.getBaseimp());
-        System.out.println(print.getTotal());
-
-
-        Productos product = new Productos();
-        product.setCodproducto(1);
-        product.setNombre("Garcia");
-        product.setMarca("70800900A");
-        product.setModelo("");
-        product.setPrecio("Garcia");
-        product.setIva("70800900A");
-
-        System.out.println(product.getCodproducto());
-        System.out.println(product.getNombre());
-        System.out.println(product.getMarca());
-        System.out.println(product.getModelo());
-        System.out.println(product.getPrecio());
-        System.out.println(product.getIva());
-
-
-        Servicios service = new Servicios();
-        service.setCodcli(1);
-        service.setNombre("Garcia");
-        service.setMarca("70800900A");
-        service.setModelo("");
-        service.setPrecio("Garcia");
-        service.setIva("70800900A");
-
-        System.out.println(service.getCodcli());
-        System.out.println(service.getNombre());
-        System.out.println(service.getMarca());
-        System.out.println(service.getModelo());
-        System.out.println(service.getPrecio());
-        System.out.println(service.getIva());
-
-
-        Sociedades society = new Sociedades();
-        society.setCodcliente(1);
-        society.setRazonsocial("Daniel S.A");
-        society.setCif(2);
-        society.setDirpostal("Calle Juan Carlos I");
-        society.setPoblacion("Ávila");
-        society.setProvincia("Ávila");
-        society.setEmail("danielg@gmail.com");
-        society.setTelefono(141424262);
-
-        System.out.println(society.getCodcliente());
-        System.out.println(society.getRazonsocial());
-        System.out.println(society.getCif());
-        System.out.println(society.getDirpostal());
-        System.out.println(society.getPoblacion());
-        System.out.println(society.getProvincia());
-        System.out.println(society.getEmail());
-        System.out.println(society.getTelefono());
+        System.out.println("");
+        System.out.println("  FACTURA" + factura.getId());
+        System.out.println("");
+        System.out.println("Fecha: " + factura.getFecha());
+        System.out.println("Client:");
+        System.out.println("cif/nif: " + factura.getCliente().getId());
+        System.out.println("");
+        System.out.println("nombre: " + factura.getCliente().getNombre());
+        System.out.println("direccion: " + factura.getCliente().getDirpostal());
+        System.out.println("poblacion: " + factura.getCliente().getPoblacion());
+        System.out.println("provincia: " + factura.getCliente().getProvincia());
+        System.out.println("email: " + factura.getCliente().getEmail());
+        System.out.println("Telefono: " + factura.getCliente().getTelefono());
+        System.out.println("");
+        System.out.println("  VENTA");
+        System.out.println("");
+        System.out.println("codigo: " + factura.getServicio().getId());
+        System.out.println("nombre: " + factura.getServicio().getNombre());
+        System.out.println("precio: " + factura.getServicio().getPrecio());
+        System.out.println("tipo IVA: " + factura.getServicio().getIva());
+        System.out.println("");
+        System.out.println("codigo: " + factura.getProducto().getId());
+        System.out.println("nombre: " + factura.getProducto().getNombre());
+        System.out.println("precio: " + factura.getProducto().getPrecio());
+        System.out.println("tipo IVA: " + factura.getProducto().getIva());
+        System.out.println("TOTAL:");
+        System.out.println("Total: " + (factura.getProducto().getPrecio())+factura.getServicio().getPrecio());
     }
 }

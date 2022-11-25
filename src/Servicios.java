@@ -1,53 +1,43 @@
-public class Servicios {
-    private Integer codcli;
+public class Servicios implements ProductoServicio {
+    private Integer idservicio;
     private String nombre;
-    private String marca;
-    private String modelo;
-    private String precio;
-    private String iva;
+    private Integer precio;
+    private Integer iva;
 
-    public Integer getCodcli() {
-        return codcli;
-    }
-    public void setCodcli(Integer codcli) {
-        this.codcli = codcli;
+    @Override
+    public Integer getId() {
+        return this.idservicio;
     }
 
+
+    @Override
     public String getNombre() {
-        return nombre;
+        return this.nombre;
+    }
+
+    @Override
+    public Integer getPrecio() {
+        return this.precio;
+    }
+
+    @Override
+    public Integer getIva() {
+        return this.iva;
+    }
+
+    public void setIdservicio(Integer idservicio) {
+        this.idservicio = idservicio;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getPrecio() {
-        return precio;
-    }
-    public void setPrecio(String precio) {
+    public void setPrecio(Integer precio) {
         this.precio = precio;
     }
 
-    public String getIva() {
-        return iva;
-    }
-    public void setIva(String iva) {
+    public void setIva(Integer iva) {
         this.iva = iva;
     }
 }

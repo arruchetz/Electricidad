@@ -1,50 +1,61 @@
-public class Productos {
-    private Integer codproducto;
+public class Productos implements ProductoServicio {
+    private Integer idproducto;
     private String nombre;
     private String marca;
     private String modelo;
-    private String precio;
-    private String iva;
+    private Integer precio;
+    private Integer iva;
 
-    public Integer getCodproducto(){
-        return codproducto;
-    }
-    public void setCodproducto(Integer codproducto){
-        this.codproducto = codproducto;
-    }
-
-    public String getNombre(){
-        return nombre;
-    }
-    public void  setNombre(String nombre){
-        this.modelo = modelo;
-    }
-
-    public String getMarca(){
-        return marca;
-    }
-    public void  setMarca(String marca){
+    public void setMarca(String marca) {
         this.marca = marca;
     }
 
-    public String getModelo(){
-        return modelo;
+    public String getMarca() {
+        return marca;
     }
-    public void  setModelo(String modelo){
+
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
-    public String getPrecio(){
-        return precio;
+    public String getModelo() {
+        return modelo;
     }
-    public void  setPrecio(String precio){
+
+
+    @Override
+    public Integer getId() {
+        return this.idproducto;
+    }
+
+    @Override
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    @Override
+    public Integer getPrecio() {
+        return this.precio;
+    }
+
+    @Override
+    public Integer getIva() {
+        return this.iva;
+    }
+
+    public void setIdproducto(Integer idproducto) {
+        this.idproducto = idproducto;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPrecio(Integer precio) {
         this.precio = precio;
     }
 
-    public String getIva(){
-        return iva;
-    }
-    public void  setIva(String iva){
+    public void setIva(Integer iva) {
         this.iva = iva;
     }
 }

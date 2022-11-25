@@ -1,5 +1,5 @@
 public class Impresion {
-    private Integer codfacturas;
+    private Integer codfactura;
     private String nifcliente;
     private String nombrecliente;
     private String dircliente;
@@ -8,12 +8,12 @@ public class Impresion {
     private String baseimp;
     private String total;
 
-    public Integer getCodfacturas() {
-        return codfacturas;
+    public Integer getCodfactura() {
+        return codfactura;
     }
 
-    public void setCodfacturas(Integer codfacturas) {
-        this.codfacturas = codfacturas;
+    public void setCodfactura(Integer codfactura) {
+        this.codfactura = codfactura;
     }
 
     public String getNifcliente() {
