@@ -1,4 +1,6 @@
-public class Servicios implements ProductoServicio {
+package com.danielgararr.chispas;
+
+public class Servicio implements ProductoServicio {
     private Integer idservicio;
     private String nombre;
     private Integer precio;

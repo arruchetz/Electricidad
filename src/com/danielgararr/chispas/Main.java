@@ -1,3 +1,10 @@
+package com.danielgararr.chispas;
+
+import com.danielgararr.chispas.*;
+import com.danielgararr.chispas.Domain.usecase.AddCustomerUseCase;
+import com.danielgararr.chispas.Domain.usecase.GetCustomerUseCase;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -5,7 +12,7 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
 
         System.out.println("*DATOS AUTONOMOS*");
-        Autonomos autonomo = new Autonomos();
+        Autonomo autonomo = new Autonomo();
         System.out.print("Dni:");
         autonomo.setDni(entrada.next());
         System.out.print("Nombre:");
@@ -24,7 +31,7 @@ public class Main {
         autonomo.setTelefono(entrada.next());
 
         System.out.println("*DATOS SOCIEDADES*");
-        Sociedades sociedad = new Sociedades();
+        Sociedad sociedad = new Sociedad();
         System.out.print("Cif:");
         sociedad.setCif(entrada.next());
         System.out.print("Nombre:");
@@ -41,7 +48,7 @@ public class Main {
         sociedad.setTelefono(entrada.next());
 
         System.out.println("*DATOS PRODUCTOS*");
-        Productos producto = new Productos();
+        Producto producto = new Producto();
         producto.setIdproducto(1);
         System.out.print("Nombre:");
         producto.setNombre(entrada.next());
@@ -55,7 +62,7 @@ public class Main {
         producto.setIva(entrada.nextInt());
 
         System.out.println("*DATOS SERVICIOS*");
-        Servicios servicio = new Servicios();
+        Servicio servicio = new Servicio();
         producto.setIdproducto(2);
         System.out.print("Nombre:");
         servicio.setNombre(entrada.next());
@@ -65,7 +72,7 @@ public class Main {
         servicio.setIva(entrada.nextInt());
 
         System.out.println("*DATOS FACTURA AUTONOMO*");
-        Facturas factura = new Facturas();
+        Factura factura = new Factura();
         factura.setId(1);
         System.out.print("Fecha:");
         factura.setFecha(entrada.next());
@@ -78,7 +85,7 @@ public class Main {
         factura.setTotal(entrada.next());
 
         System.out.println("*DATOS FACTURA SOCIEDAD*");
-        Facturas factura1 = new Facturas();
+        Factura factura1 = new Factura();
         factura1.setId(2);
         System.out.print("Fecha:");
         factura1.setFecha(entrada.next());

@@ -1,4 +1,6 @@
-public interface Clientes {
+package com.danielgararr.chispas;
+
+public interface Cliente {
     public String getId();
     public String getNombre();
     public  String getDirpostal();

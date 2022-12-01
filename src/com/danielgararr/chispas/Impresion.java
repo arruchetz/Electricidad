@@ -1,3 +1,5 @@
+package com.danielgararr.chispas;
+
 public class Impresion {
     private Integer codfactura;
     private String nifcliente;

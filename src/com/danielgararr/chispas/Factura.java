@@ -1,9 +1,11 @@
-public class Facturas {
+package com.danielgararr.chispas;
+
+public class Factura {
     private Integer id;
     private String fecha;
-    private Clientes cliente;
-    private Productos producto;
-    private Servicios servicio;
+    private Cliente cliente;
+    private Producto producto;
+    private Servicio servicio;
     private String baseimp;
     private String total;
 
@@ -62,5 +64,4 @@ public class Facturas {
     public void setTotal(String total) {
         this.total = total;
     }
-
 }

@@ -1,24 +1,18 @@
-public class Autonomos implements Clientes {
-    private String dni;
+package com.danielgararr.chispas;
+
+public class Sociedad implements Cliente {
+    private String cif;
     private String nombre;
-    private String apellidos;
-    private String dirpostal;
     private String poblacion;
+    private String dirpostal;
     private String provincia;
     private String email;
     private String telefono;
 
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-    public String getApellidos() {
-        return apellidos;
-    }
-
     @Override
     public String getId() {
-        return this.dni;
+        return this.cif;
     }
 
     @Override
@@ -27,13 +21,13 @@ public class Autonomos implements Clientes {
     }
 
     @Override
-    public String getDirpostal() {
-        return this.dirpostal;
+    public String getPoblacion() {
+        return this.poblacion;
     }
 
     @Override
-    public String getPoblacion() {
-        return this.poblacion;
+    public String getDirpostal() {
+        return this.dirpostal;
     }
 
     @Override
@@ -41,36 +35,37 @@ public class Autonomos implements Clientes {
         return this.provincia;
     }
 
+
     @Override
     public String getEmail() {
         return this.email;
     }
+
 
     @Override
     public String getTelefono() {
         return this.telefono;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setCif(String cif) {
+        this.cif = cif;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setMailingAddress(String dirpostal) {
-        this.dirpostal = dirpostal;
-    }
-
     public void setPoblacion(String poblacion) {
         this.poblacion = poblacion;
+    }
+
+    public void setDirpostal(String dirpostal) {
+        this.dirpostal = dirpostal;
     }
 
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -78,5 +73,4 @@ public class Autonomos implements Clientes {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
 }
