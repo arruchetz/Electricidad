@@ -1,4 +1,4 @@
-package com.danielgararr.chispas;
+package com.danielgararr.chispas.domain.models;
 
 public class Producto implements ProductoServicio {
     private Integer idproducto;

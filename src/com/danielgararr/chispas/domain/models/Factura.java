@@ -1,4 +1,4 @@
-package com.danielgararr.chispas;
+package com.danielgararr.chispas.domain.models;
 
 public class Factura {
     private Integer id;
@@ -25,27 +25,27 @@ public class Factura {
         this.fecha = fecha;
     }
 
-    public Clientes getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(Clientes cliente) {
+    public void setCliente(Sociedad cliente) {
         this.cliente = cliente;
     }
 
-    public Productos getProducto() {
+    public Producto getProducto() {
         return producto;
     }
 
-    public void setProducto(Productos producto) {
+    public void setProducto(Producto producto) {
         this.producto = producto;
     }
 
-    public Servicios getServicio() {
+    public Servicio getServicio() {
         return servicio;
     }
 
-    public void setServicio(Servicios servicio) {
+    public void setServicio(Servicio servicio) {
         this.servicio = servicio;
     }
 

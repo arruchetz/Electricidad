@@ -1,10 +1,6 @@
-package com.danielgararr.chispas;
+package com.danielgararr.chispas.presentation;
 
-import com.danielgararr.chispas.*;
-import com.danielgararr.chispas.Domain.usecase.AddCustomerUseCase;
-import com.danielgararr.chispas.Domain.usecase.GetCustomerUseCase;
-
-import java.util.List;
+import com.danielgararr.chispas.domain.models.*;
 import java.util.Scanner;
 
 public class Main {
