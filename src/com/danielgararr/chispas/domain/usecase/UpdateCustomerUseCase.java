@@ -11,6 +11,6 @@ public class UpdateCustomerUseCase {
     }
 
     public void execute(Cliente cliente){
-        customerDataStore.updateCustomer(Cliente);
+        customerDataStore.updateCustomer(cliente);
     }
 }

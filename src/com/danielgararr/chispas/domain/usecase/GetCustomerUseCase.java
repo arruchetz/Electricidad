@@ -11,6 +11,6 @@ public class GetCustomerUseCase {
     }
 
     public void execute(Cliente cliente){
-        customerDataStore.getCustomer(cliente);
+        customerDataStore.GetCustomer(cliente);
     }
 }

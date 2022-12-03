@@ -94,9 +94,9 @@ public class Main {
         factura1.setTotal(entrada.next());
 
 
-        System.out.println(" FACTURA" + factura.getId());
+        System.out.println("FACTURA" + factura.getId());
         System.out.println("Fecha: " + factura.getFecha());
-        System.out.println("Client:");
+        System.out.println("Cliente:");
         System.out.println("NIF: " + factura.getCliente().getId());
         System.out.println("Nombre: " + factura.getCliente().getNombre());
         System.out.println("Direccion Postal: " + factura.getCliente().getDirpostal());
@@ -116,5 +116,48 @@ public class Main {
         System.out.println("IVA: " + factura.getProducto().getIva());
         System.out.println("TOTAL:");
         System.out.println("Total: " + (factura.getProducto().getPrecio())+factura.getServicio().getPrecio());
+
+
+        CustomerDataStore customerDataStore = new MemCustomerDataStore();
+
+        AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase(customerDataStore);
+        addCustomerUseCase.execute(autonomo);
+        addCustomerUseCase.execute(sociedad);
+
+        GetCustomersUseCase getCustomersUseCase = new GetCustomersUseCase(customerDataStore);
+        List<Cliente> customers = getCustomersUseCase.execute();
+        for (int i = 0; i < customers.size(); i++) {
+            printCliente(customers.get(i));
+        }
+
+        System.out.println("----- Eliminando ------");
+
+        DeleteCustomerUseCase deleteCustomerUseCase = new DeleteCustomerUseCase(customerDataStore);
+        deleteCustomerUseCase.execute(autonomo);
+        List<Cliente> customers2 = getCustomersUseCase.execute();
+        for (int i = 0; i < customers2.size(); i++) {
+            printCliente(customers2.get(i));
+        }
+
+        System.out.println("----- Modificando Sociedad ------");
+        sociedad.setEmail("0000000000");
+        UpdateCustomerUseCase updateCustomerUseCase = new UpdateCustomerUseCase(customerDataStore);
+        updateCustomerUseCase.execute(sociedad);
+        List<Cliente> customers3 = getCustomersUseCase.execute();
+        for (int i = 0; i < customers3.size(); i++) {
+            printCliente(customers3.get(i));
+        }
+    }
+
+    public static void printAutonomos(Autonomo autonomo) {
+        System.out.println("Cod: " + autonomo.getCodCliente() + " Nombre: " + autonomo.getNombre());
+    }
+
+    public static void printSociedades(Sociedad sociedad) {
+        System.out.println("Cod: " + sociedad.getCodCliente() + " Nombre: " + sociedad.getNombre());
+    }
+
+    public static void printCliente(Cliente cliente) {
+        System.out.println("Cod: " + cliente.getCodCliente() + " Nombre: " + cliente.getNombre() + " Email: " + cliente.getEmail());
     }
 }

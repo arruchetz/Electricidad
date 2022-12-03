@@ -7,6 +7,8 @@ public interface ItemDataStore {
     void deleteCustomer(Item item);
     void updateCustomer(Item item);
 
+    void saveCustomer(Item item);
+
     List<Item> getAllCustomers();
     Item findById(Integer codItem);
 }
