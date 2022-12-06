@@ -1,6 +1,6 @@
 package com.danielgararr.chispas.domain.models;
 
-public interface Item {
+public interface ProductoServicio {
     public Integer getId();
     public  String getNombre();
     public Integer getPrecio();

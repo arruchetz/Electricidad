@@ -1,12 +1,9 @@
 package com.danielgararr.chispas.presentation;
 
-import com.danielgararr.chispas.data.CustomerDataStore;
-import com.danielgararr.chispas.data.MemCustomerDataStore;
+import com.danielgararr.chispas.data.Customer.CustomerDataStore;
+import com.danielgararr.chispas.data.Customer.MemCustomerDataStore;
 import com.danielgararr.chispas.domain.models.*;
-import com.danielgararr.chispas.domain.usecase.AddCustomerUseCase;
-import com.danielgararr.chispas.domain.usecase.DeleteCustomerUseCase;
-import com.danielgararr.chispas.domain.usecase.GetCustomerUseCase;
-import com.danielgararr.chispas.domain.usecase.UpdateCustomerUseCase;
+import com.danielgararr.chispas.domain.usecase.Customer.AddCustomerUseCase;
 
 import java.util.Scanner;
 
@@ -131,7 +128,7 @@ public class Main {
         addCustomerUseCase.execute(autonomo);
         addCustomerUseCase.execute(sociedad);
 
-        GetCustomerUseCase getCustomerUseCase = new GetCustomerUseCase(customerDataStore);
+        /**GetCustomerUseCase getCustomerUseCase = new GetCustomerUseCase(customerDataStore);
         List<Cliente> customers = getCustomerUseCase.execute();
         for (int i = 0; i < customers.size(); i++) {
             printCliente(customers.get(i));
@@ -155,7 +152,6 @@ public class Main {
             printCliente(customers3.get(i));
         }
     }
-
     public static void printAutonomos(Autonomo autonomo) {
         System.out.println("Cod: " + autonomo.getId() + " Nombre: " + autonomo.getNombre());
     }
@@ -166,5 +162,5 @@ public class Main {
 
     public static void printCliente(Cliente cliente) {
         System.out.println("Cod: " + cliente.getId() + " Nombre: " + cliente.getNombre() + " Email: " + cliente.getEmail());
-    }
+    }**/
 }

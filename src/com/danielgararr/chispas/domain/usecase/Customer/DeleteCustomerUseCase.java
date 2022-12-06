@@ -1,12 +1,11 @@
-package com.danielgararr.chispas.domain.usecase;
+package com.danielgararr.chispas.domain.usecase.Customer;
 
-import com.danielgararr.chispas.data.CustomerDataStore;
 import com.danielgararr.chispas.domain.models.Cliente;
 
 public class DeleteCustomerUseCase {
-    private CustomerDataStore customerDataStore;
+    private ItemDataStore customerDataStore;
 
-    public DeleteCustomerUseCase(CustomerDataStore customerDataStore){
+    public DeleteCustomerUseCase(ItemDataStore customerDataStore){
         this.customerDataStore = customerDataStore;
     }
 

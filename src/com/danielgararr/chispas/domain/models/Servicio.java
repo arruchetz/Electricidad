@@ -1,6 +1,6 @@
 package com.danielgararr.chispas.domain.models;
 
-public class Servicio implements Item {
+public class Servicio implements ProductoServicio {
     private Integer idservicio;
     private String nombre;
     private Integer precio;

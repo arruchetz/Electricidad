@@ -1,12 +1,11 @@
-package com.danielgararr.chispas.domain.usecase;
+package com.danielgararr.chispas.domain.usecase.Customer;
 
-import com.danielgararr.chispas.data.CustomerDataStore;
 import com.danielgararr.chispas.domain.models.Cliente;
 
 public class GetCustomerUseCase {
-    private CustomerDataStore customerDataStore;
+    private ItemDataStore customerDataStore;
 
-    public GetCustomerUseCase(CustomerDataStore customerDataStore){
+    public GetCustomerUseCase(ItemDataStore customerDataStore){
         this.customerDataStore = customerDataStore;
     }
 
