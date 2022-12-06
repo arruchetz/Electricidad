@@ -1,9 +1,22 @@
 package com.danielgararr.chispas.presentation;
 
+import com.danielgararr.chispas.data.Bill.BillDataStore;
+import com.danielgararr.chispas.data.Bill.MemBillDataStore;
 import com.danielgararr.chispas.data.Customer.CustomerDataStore;
 import com.danielgararr.chispas.data.Customer.MemCustomerDataStore;
+import com.danielgararr.chispas.data.Item.ItemDataStore;
+import com.danielgararr.chispas.data.Item.MemItemDataStore;
 import com.danielgararr.chispas.domain.models.*;
+import com.danielgararr.chispas.domain.usecase.Bill.AddBillUseCase;
+import com.danielgararr.chispas.domain.usecase.Bill.GetBillUseCase;
 import com.danielgararr.chispas.domain.usecase.Customer.AddCustomerUseCase;
+import com.danielgararr.chispas.domain.usecase.Customer.DeleteCustomerUseCase;
+import com.danielgararr.chispas.domain.usecase.Customer.GetCustomerUseCase;
+import com.danielgararr.chispas.domain.usecase.Customer.UpdateCustomerUseCase;
+import com.danielgararr.chispas.domain.usecase.Item.AddItemUseCase;
+import com.danielgararr.chispas.domain.usecase.Item.DeleteItemUseCase;
+import com.danielgararr.chispas.domain.usecase.Item.GetItemUseCase;
+import com.danielgararr.chispas.domain.usecase.Item.UpdateItemUseCase;
 
 import java.util.Scanner;
 
@@ -122,19 +135,22 @@ public class Main {
         System.out.println("Total: " + (factura.getProducto().getPrecio())+factura.getServicio().getPrecio());
 
 
+        //Cliente
         CustomerDataStore customerDataStore = new MemCustomerDataStore();
+
+        System.out.println("----- Agregando Cliente -----);
 
         AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase(customerDataStore);
         addCustomerUseCase.execute(autonomo);
         addCustomerUseCase.execute(sociedad);
 
-        /**GetCustomerUseCase getCustomerUseCase = new GetCustomerUseCase(customerDataStore);
+        GetCustomerUseCase getCustomerUseCase = new GetCustomerUseCase(customerDataStore);
         List<Cliente> customers = getCustomerUseCase.execute();
         for (int i = 0; i < customers.size(); i++) {
             printCliente(customers.get(i));
         }
 
-        System.out.println("----- Eliminando ------");
+        System.out.println("----- Eliminando Cliente ------");
 
         DeleteCustomerUseCase deleteCustomerUseCase = new DeleteCustomerUseCase(customerDataStore);
         deleteCustomerUseCase.execute(autonomo);
@@ -143,7 +159,7 @@ public class Main {
             printCliente(customers2.get(i));
         }
 
-        System.out.println("----- Modificando Sociedad ------");
+        System.out.println("----- Modificando Cliente ------");
         sociedad.setEmail("0000000000");
         UpdateCustomerUseCase updateCustomerUseCase = new UpdateCustomerUseCase(customerDataStore);
         updateCustomerUseCase.execute(sociedad);
@@ -151,6 +167,55 @@ public class Main {
         for (int i = 0; i < customers3.size(); i++) {
             printCliente(customers3.get(i));
         }
+
+        //ProductoServicio
+        ItemDataStore itemDataStore = new MemItemDataStore();
+
+        System.out.println("----- Agregando Producto -----);
+
+        AddItemUseCase addItemUseCase = new AddItemUseCase(itemDataStore);
+        addItemUseCase.execute(producto);
+        addItemUseCase.execute(servicio);
+
+        GetItemUseCase getItemUseCase = new GetItemUseCase(itemDataStore);
+        List<ProductoServicio> items = getItemUseCase.execute();
+        for (int i = 0; i < items.size(); i++) {
+            printProductoServicio(items.get(i));
+        }
+
+        System.out.println("----- Eliminando Producto ------");
+
+        DeleteItemUseCase deleteItemUseCase = new DeleteItemUseCase(itemDataStore);
+        deleteItemUseCase.execute(producto);
+        List<ProductoServicio> producto2 = getItemUseCase.execute();
+        for (int i = 0; i < producto2.size(); i++) {
+            printProductoServicio(producto2.get(i));
+        }
+
+        System.out.println("----- Modificando Producto ------");
+        producto.setModelo("tesla");
+        UpdateItemUseCase updateItemUseCase = new UpdateItemUseCase(itemDataStore);
+        updateItemUseCase.execute(producto);
+        List<ProductoServicio> producto3 = getItemUseCase.execute();
+        for (int i = 0; i < producto3.size(); i++) {
+            printProductoServicio(producto3.get(i));
+        }
+
+        //Factura
+        BillDataStore billDataStore = new MemBillDataStore();
+
+        System.out.println("----- Agregando Factura -----);
+
+        AddBillUseCase addBillUseCase = new AddBillUseCase(billDataStore);
+        addBillUseCase.execute(factura1);
+        addBillUseCase.execute(factura2);
+
+        GetBillUseCase getBillUseCase = new GetBillUseCase(billDataStore);
+        List<Impresion> bills = getBillUseCase.execute();
+        for (int i = 0; i < items.size(); i++) {
+            printFactura(items.get(i));
+        }
+
     }
     public static void printAutonomos(Autonomo autonomo) {
         System.out.println("Cod: " + autonomo.getId() + " Nombre: " + autonomo.getNombre());
@@ -162,5 +227,5 @@ public class Main {
 
     public static void printCliente(Cliente cliente) {
         System.out.println("Cod: " + cliente.getId() + " Nombre: " + cliente.getNombre() + " Email: " + cliente.getEmail());
-    }**/
+    }
 }
