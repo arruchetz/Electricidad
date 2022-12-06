@@ -1,14 +1,16 @@
 package com.danielgararr.chispas.data;
 
+import com.danielgararr.chispas.domain.models.Cliente;
+import com.danielgararr.chispas.domain.models.Item;
+
 import java.util.List;
 
 public interface ItemDataStore {
-    void saveCustomer(Item item);
-    void deleteCustomer(Item item);
-    void updateCustomer(Item item);
+    void deleteItem(Item item);
 
-    void saveCustomer(Item item);
+    void GetItem(Item item);
 
-    List<Item> getAllCustomers();
-    Item findById(Integer codItem);
+    void addItem(Item item);
+
+    void updateItem(Item item);
 }

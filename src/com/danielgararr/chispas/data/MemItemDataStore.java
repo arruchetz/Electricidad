@@ -1,31 +1,29 @@
 package com.danielgararr.chispas.data;
 
+import com.danielgararr.chispas.domain.models.Item;
+
 import java.util.List;
 
 public class MemItemDataStore implements ItemDataStore {
 
+
     @Override
-    public void saveCustomer(Item item) {
+    public void deleteItem(Item item) {
 
     }
 
     @Override
-    public void deleteCustomer(Item item) {
+    public void GetItem(Item item) {
 
     }
 
     @Override
-    public void updateCustomer(Item item) {
+    public void addItem(Item item) {
 
     }
 
     @Override
-    public List<Item> getAllCustomers() {
-        return null;
-    }
+    public void updateItem(Item item) {
 
-    @Override
-    public Item findById(Integer codItem) {
-        return null;
     }
 }

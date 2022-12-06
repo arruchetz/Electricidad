@@ -1,6 +1,13 @@
 package com.danielgararr.chispas.presentation;
 
+import com.danielgararr.chispas.data.CustomerDataStore;
+import com.danielgararr.chispas.data.MemCustomerDataStore;
 import com.danielgararr.chispas.domain.models.*;
+import com.danielgararr.chispas.domain.usecase.AddCustomerUseCase;
+import com.danielgararr.chispas.domain.usecase.DeleteCustomerUseCase;
+import com.danielgararr.chispas.domain.usecase.GetCustomerUseCase;
+import com.danielgararr.chispas.domain.usecase.UpdateCustomerUseCase;
+
 import java.util.Scanner;
 
 public class Main {
@@ -124,8 +131,8 @@ public class Main {
         addCustomerUseCase.execute(autonomo);
         addCustomerUseCase.execute(sociedad);
 
-        GetCustomersUseCase getCustomersUseCase = new GetCustomersUseCase(customerDataStore);
-        List<Cliente> customers = getCustomersUseCase.execute();
+        GetCustomerUseCase getCustomerUseCase = new GetCustomerUseCase(customerDataStore);
+        List<Cliente> customers = getCustomerUseCase.execute();
         for (int i = 0; i < customers.size(); i++) {
             printCliente(customers.get(i));
         }
@@ -134,7 +141,7 @@ public class Main {
 
         DeleteCustomerUseCase deleteCustomerUseCase = new DeleteCustomerUseCase(customerDataStore);
         deleteCustomerUseCase.execute(autonomo);
-        List<Cliente> customers2 = getCustomersUseCase.execute();
+        List<Cliente> customers2 = getCustomerUseCase.execute();
         for (int i = 0; i < customers2.size(); i++) {
             printCliente(customers2.get(i));
         }
@@ -143,21 +150,21 @@ public class Main {
         sociedad.setEmail("0000000000");
         UpdateCustomerUseCase updateCustomerUseCase = new UpdateCustomerUseCase(customerDataStore);
         updateCustomerUseCase.execute(sociedad);
-        List<Cliente> customers3 = getCustomersUseCase.execute();
+        List<Cliente> customers3 = getCustomerUseCase.execute();
         for (int i = 0; i < customers3.size(); i++) {
             printCliente(customers3.get(i));
         }
     }
 
     public static void printAutonomos(Autonomo autonomo) {
-        System.out.println("Cod: " + autonomo.getCodCliente() + " Nombre: " + autonomo.getNombre());
+        System.out.println("Cod: " + autonomo.getId() + " Nombre: " + autonomo.getNombre());
     }
 
     public static void printSociedades(Sociedad sociedad) {
-        System.out.println("Cod: " + sociedad.getCodCliente() + " Nombre: " + sociedad.getNombre());
+        System.out.println("Cod: " + sociedad.getId() + " Nombre: " + sociedad.getNombre());
     }
 
     public static void printCliente(Cliente cliente) {
-        System.out.println("Cod: " + cliente.getCodCliente() + " Nombre: " + cliente.getNombre() + " Email: " + cliente.getEmail());
+        System.out.println("Cod: " + cliente.getId() + " Nombre: " + cliente.getNombre() + " Email: " + cliente.getEmail());
     }
 }
