@@ -217,6 +217,8 @@ public class Main {
         }
 
     }
+
+    //Imprimir CLiente
     public static void printAutonomos(Autonomo autonomo) {
         System.out.println("Cod: " + autonomo.getId() + " Nombre: " + autonomo.getNombre());
     }
@@ -227,5 +229,23 @@ public class Main {
 
     public static void printCliente(Cliente cliente) {
         System.out.println("Cod: " + cliente.getId() + " Nombre: " + cliente.getNombre() + " Email: " + cliente.getEmail());
+    }
+
+    //Imprimir Item
+    public static void printProductos(Producto producto) {
+        System.out.println("Cod: " + producto.getId() + " Nombre: " + producto.getNombre());
+    }
+
+    public static void printServicios(Servicio servicio) {
+        System.out.println("Cod: " + servicio.getId() + " Nombre: " + servicio.getNombre());
+    }
+
+    public static void printProductoServicio(ProductoServicio productoServicio) {
+        System.out.println("Cod: " + productoServicio.getId() + " Nombre: " + productoServicio.getNombre() + " Precio: " + productoServicio.getPrecio());
+    }
+
+    //Imprimir Factura
+    public static void printFactura(Factura factura) {
+        System.out.println("Cod: " + factura.getId() + " Nombre: " + factura.getCliente());
     }
 }
