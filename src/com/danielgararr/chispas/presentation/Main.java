@@ -137,8 +137,8 @@ public class Main {
 
         //Cliente
         CustomerDataStore customerDataStore = new MemCustomerDataStore();
-
-        System.out.println("----- Agregando Cliente -----);
+        
+        System.out.println("----- Agregando Cliente -----");
 
         AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase(customerDataStore);
         addCustomerUseCase.execute(autonomo);
@@ -171,7 +171,7 @@ public class Main {
         //ProductoServicio
         ItemDataStore itemDataStore = new MemItemDataStore();
 
-        System.out.println("----- Agregando Producto -----);
+        System.out.println("----- Agregando Producto -----");
 
         AddItemUseCase addItemUseCase = new AddItemUseCase(itemDataStore);
         addItemUseCase.execute(producto);
@@ -204,14 +204,14 @@ public class Main {
         //Factura
         BillDataStore billDataStore = new MemBillDataStore();
 
-        System.out.println("----- Agregando Factura -----);
+        System.out.println("----- Agregando Factura -----");
 
         AddBillUseCase addBillUseCase = new AddBillUseCase(billDataStore);
+        addBillUseCase.execute(factura);
         addBillUseCase.execute(factura1);
-        addBillUseCase.execute(factura2);
 
         GetBillUseCase getBillUseCase = new GetBillUseCase(billDataStore);
-        List<Impresion> bills = getBillUseCase.execute();
+        List<Factura> factura2 = getBillUseCase.execute();
         for (int i = 0; i < items.size(); i++) {
             printFactura(items.get(i));
         }
