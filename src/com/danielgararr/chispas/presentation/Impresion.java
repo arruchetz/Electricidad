@@ -1,4 +1,4 @@
-package com.danielgararr.chispas;
+package com.danielgararr.chispas.presentation;
 
 public class Impresion {
     private Integer codfactura;

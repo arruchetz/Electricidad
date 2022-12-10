@@ -1,4 +1,4 @@
-package com.danielgararr.chispas;
+package com.danielgararr.chispas.domain.models;
 
 public interface Cliente {
     public String getId();
